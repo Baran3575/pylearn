@@ -8,8 +8,19 @@ class Progress(context: Context) {
     fun isDone(id: String): Boolean = prefs.getBoolean("done_$id", false)
 
     fun markDone(id: String) {
-        prefs.edit().putBoolean("done_$id", true).apply()
+        if (!isDone(id)) {
+            prefs.edit()
+                .putBoolean("done_$id", true)
+                .putInt("xp", xp() + XP_PER_LESSON)
+                .apply()
+        }
     }
 
     fun completedCount(ids: List<String>): Int = ids.count { isDone(it) }
+
+    fun xp(): Int = prefs.getInt("xp", 0)
+
+    companion object {
+        const val XP_PER_LESSON = 10
+    }
 }

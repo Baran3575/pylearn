@@ -6,6 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.core.*
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.animation.togetherWith
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
@@ -151,8 +155,7 @@ fun HomeScreen(lessons: List<Lesson>, progress: Progress, doneVersion: Int, onOp
         }
 
         // units
-        grouped.forEachIndexed { gi, (unit, unitLessons) ->
-            val isFirstUndone = unitLessons.indexOfFirst { it.id == (lessons.getOrNull(firstOpen)?.id ?: "") }
+        grouped.entries.forEachIndexed { gi, (unit, unitLessons) ->
             UnitModule(
                 title = "BÖLÜM ${gi + 1}",
                 name = unit,

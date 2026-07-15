@@ -18,6 +18,7 @@ data class Lesson(
     val title: String,
     val subtitle: String,
     val unit: String,
+    val goal: String,
     val steps: List<Step>,
 ) {
     val taskCount: Int get() = steps.count { it.isTask }
@@ -44,6 +45,7 @@ fun loadLessons(context: Context): List<Lesson> {
             title = o.getString("title"),
             subtitle = o.getString("subtitle"),
             unit = o.optString("unit", "Bölüm"),
+            goal = o.optString("goal", ""),
             steps = steps,
         )
     }

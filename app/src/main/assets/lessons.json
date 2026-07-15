@@ -4,10 +4,11 @@
     "title": "Ekrana Yazdırma",
     "subtitle": "print()",
     "unit": "Temeller",
+    "goal": "Ekrana istediğin yazıyı veya sayıyı çıkarmayı öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "print() ekrana bir şey yazdırır. Parantez içine ne yazarsan onu gösterir. Metinler tırnak içinde olmalı.",
+        "text": "Her programın amacı bir sonuç üretmektir. Python'da sonucu ekrana yazdırmak için print() kullanılır. Parantez içine ne koyarsan o görünür.",
         "code": "print(\"Merhaba\")"
       },
       {
@@ -18,7 +19,18 @@
       },
       {
         "type": "learn",
-        "text": "Sayıları tırnaksız yazarsın. print sayıyı da yazdırabilir.",
+        "text": "Tırnak içindeki her şey birebir yazılır. İçine istediğin cümleyi koyabilirsin.",
+        "code": "print(\"Python eğlenceli\")"
+      },
+      {
+        "type": "task",
+        "text": "Ekrana \"Kod yazıyorum\" yazdır.",
+        "expected": "print(\"Kod yazıyorum\")",
+        "hint": "Tırnakları unutma: print(\"Kod yazıyorum\")"
+      },
+      {
+        "type": "learn",
+        "text": "Sayıları tırnaksız yazarsın; print onları da basar. Metin ile sayı farklıdır.",
         "code": "print(42)"
       },
       {
@@ -34,10 +46,11 @@
     "title": "Değişkenler",
     "subtitle": "isim = değer",
     "unit": "Temeller",
+    "goal": "Veriyi isimlendirip sonradan tekrar kullanmayı öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "Değişken bir kutudur; içine değer koyarsın. isim = değer şeklinde tanımlanır.",
+        "text": "Değişken bir etiketli kutudur. içine bir değer koyar, o etiketi kullanarak değere ulaşırsın. Tanım: isim = değer.",
         "code": "ad = \"Ali\"\nprint(ad)"
       },
       {
@@ -48,7 +61,7 @@
       },
       {
         "type": "learn",
-        "text": "Bir değişkenin değeri sonradan değişebilir. Son atanan değer geçerlidir.",
+        "text": "Bir değişkenin değeri sonradan değişebilir. En son atanan değer geçerlidir.",
         "code": "x = 5\nx = 10\nprint(x)"
       },
       {
@@ -56,6 +69,17 @@
         "text": "sehir adında bir değişkene \"Ankara\" ata ve yazdır.",
         "expected": "sehir = \"Ankara\"\nprint(sehir)",
         "hint": "sehir = \"Ankara\" sonra print(sehir)."
+      },
+      {
+        "type": "learn",
+        "text": "Değişkenleri print içinde birleştirebilirsin; virgülle ayırırsan araya boşluk koyar.",
+        "code": "isim = \"Ayşe\"\nprint(\"Merhaba\", isim)"
+      },
+      {
+        "type": "task",
+        "text": "ad = \"Can\" yap; print ile \"Merhaba Can\" yazdır (virgülle birleştir).",
+        "expected": "ad = \"Can\"\nprint(\"Merhaba\", ad)",
+        "hint": "print(\"Merhaba\", ad)"
       }
     ]
   },
@@ -64,10 +88,11 @@
     "title": "Sayı ve Metin",
     "subtitle": "int, str",
     "unit": "Temeller",
+    "goal": "Sayılarla hesaplama yapmayı ve metinleri işlemeyi öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "Sayılarla matematik yapabilirsin: + topla, - çıkar, * çarp, / böl.",
+        "text": "İki ana tür var: sayı (int) ve metin (str). Matematik yalnızca sayılarla yapılır.",
         "code": "print(2 + 3)"
       },
       {
@@ -78,14 +103,25 @@
       },
       {
         "type": "learn",
-        "text": "Metinleri + ile birleştirebilirsin. İkisi de metin olmalı.",
-        "code": "print(\"Ali\" + \"Veli\")"
+        "text": "Çarpma *, bölme /, çıkarma - ile yapılır. İşlem önceliği okuldaki gibidir.",
+        "code": "print(6 * 7)"
       },
       {
         "type": "task",
         "text": "6 ile 7'yi çarp ve sonucu yazdır.",
         "expected": "print(6 * 7)",
         "hint": "Çarpma için * kullan."
+      },
+      {
+        "type": "learn",
+        "text": "Metinleri + ile bitiştirebilirsin. İkisi de metin olmalı; sayıyı önce str() ile çevirirsin.",
+        "code": "print(\"Ali\" + \"Veli\")"
+      },
+      {
+        "type": "task",
+        "text": "ad = \"Nehir\"; print ile ad + \" hoşgeldin\" yazdır.",
+        "expected": "ad = \"Nehir\"\nprint(ad + \" hoşgeldin\")",
+        "hint": "Metinleri + ile birleştir."
       }
     ]
   },
@@ -94,10 +130,11 @@
     "title": "Kullanıcıdan Girdi",
     "subtitle": "input()",
     "unit": "Etkileşim",
+    "goal": "Programını kullanıcıyla konuşturabilmeyi öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "input() kullanıcıdan yazı ister ve o yazıyı sana verir. Genelde bir değişkene atanır.",
+        "text": "input() kullanıcıdan bir şey yazmasını ister ve yazdığı metni sana verir. Genelde bir değişkene atanır.",
         "code": "ad = input(\"Adın: \")\nprint(ad)"
       },
       {
@@ -108,14 +145,25 @@
       },
       {
         "type": "learn",
-        "text": "Aldığın girdiyi hemen yazdırabilirsin.",
-        "code": "renk = input(\"Renk: \")\nprint(renk)"
+        "text": "Aldığın girdiyi hemen yazdırabilir, mesaja gömebilirsin.",
+        "code": "isim = input(\"İsmin: \")\nprint(\"Merhaba \" + isim)"
       },
       {
         "type": "task",
-        "text": "Kullanıcıdan \"İsim: \" al, isim değişkenine ata ve yazdır.",
-        "expected": "isim = input(\"İsim: \")\nprint(isim)",
-        "hint": "Önce input ile al, sonra print ile yazdır."
+        "text": "Kullanıcıdan \"Yaş: \" al, yas değişkenine ata ve \"Yaşın: \" + yas yazdır.",
+        "expected": "yas = input(\"Yaş: \")\nprint(\"Yaşın: \" + yas)",
+        "hint": "input sonucunu değişkene ata, sonra print ile birleştir."
+      },
+      {
+        "type": "learn",
+        "text": "input her zaman metin verir. Onu sayı gibi kullanmak için int() ile çevirirsin.",
+        "code": "n = int(input(\"Sayı: \"))\nprint(n + 1)"
+      },
+      {
+        "type": "task",
+        "text": "Kullanıcıdan sayı al, s = int(input(\"Sayı: \")) yap ve s + 5 yazdır.",
+        "expected": "s = int(input(\"Sayı: \"))\nprint(s + 5)",
+        "hint": "int(input(...)) ile sayıya çevir."
       }
     ]
   },
@@ -124,10 +172,11 @@
     "title": "Koşul",
     "subtitle": "if / else",
     "unit": "Mantık",
+    "goal": "Programına karar aldırabilmeyi öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "if bir koşul doğruysa alttaki girintili satırı çalıştırır. Girinti 4 boşluktur.",
+        "text": "if bir koşul doğruysa alttaki girintili satırı çalıştırır. Girinti 4 boşluktur; o satır if'e bağlıdır.",
         "code": "x = 5\nif x > 3:\n    print(\"büyük\")"
       },
       {
@@ -138,7 +187,7 @@
       },
       {
         "type": "learn",
-        "text": "else, koşul yanlışsa çalışır. if ve else aynı hizada olur.",
+        "text": "else, koşul yanlışsa çalışır. if ve else aynı hizada olur, her ikisinin de gövdesi girintilidir.",
         "code": "yas = 15\nif yas >= 18:\n    print(\"yetişkin\")\nelse:\n    print(\"çocuk\")"
       },
       {
@@ -146,6 +195,17 @@
         "text": "sayi = 3 olsun. sayi 5'ten küçükse (<) \"az\" değilse \"çok\" yazdır.",
         "expected": "sayi = 3\nif sayi < 5:\n    print(\"az\")\nelse:\n    print(\"çok\")",
         "hint": "if ... : / girintili print / else: / girintili print"
+      },
+      {
+        "type": "learn",
+        "text": "elif ile birden çok koşul sırayla denetlenir. İlk doğru olan çalışır.",
+        "code": "skor = 80\nif skor >= 90:\n    print(\"A\")\nelif skor >= 50:\n    print(\"geçti\")\nelse:\n    print(\"kaldı\")"
+      },
+      {
+        "type": "task",
+        "text": "n = 7 için: n 10'dan büyükse \"büyük\", 10'a eşitse \"on\", değilse \"küçük\" yazdır.",
+        "expected": "n = 7\nif n > 10:\n    print(\"büyük\")\nelif n == 10:\n    print(\"on\")\nelse:\n    print(\"küçük\")",
+        "hint": "if / elif / else üçgeni; eşitlik için == kullan."
       }
     ]
   },
@@ -154,10 +214,11 @@
     "title": "Döngü",
     "subtitle": "for / range",
     "unit": "Mantık",
+    "goal": "Aynı işi tekrar tekrar yazmadan yaptırabilmeyi öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "for döngüsü bir işi tekrar eder. range(3) sayıları 0, 1, 2 üretir. Gövde girintilidir.",
+        "text": "for döngüsü bir işi tekrar eder. range(3) sayıları 0, 1, 2 üretir; her biri için gövde çalışır.",
         "code": "for i in range(3):\n    print(i)"
       },
       {
@@ -176,6 +237,17 @@
         "text": "\"merhaba\" kelimesini 2 kez yazdıran bir döngü yaz.",
         "expected": "for i in range(2):\n    print(\"merhaba\")",
         "hint": "range(2) ve girintili print(\"merhaba\")."
+      },
+      {
+        "type": "learn",
+        "text": "range(baş, son) ile başlangıcı da belirleyebilirsin. range(1,4) -> 1,2,3.",
+        "code": "for i in range(1, 4):\n    print(i)"
+      },
+      {
+        "type": "task",
+        "text": "1'den 3'e kadar sayıları (1,2,3) yazdıran döngü yaz.",
+        "expected": "for i in range(1, 4):\n    print(i)",
+        "hint": "Başlangıç için range(1, 4)."
       }
     ]
   },
@@ -184,6 +256,7 @@
     "title": "Liste",
     "subtitle": "[ ]",
     "unit": "Veri",
+    "goal": "Birden çok değeri tek yerde tutmayı öğreneceksin.",
     "steps": [
       {
         "type": "learn",
@@ -198,7 +271,7 @@
       },
       {
         "type": "learn",
-        "text": "Listenin elemanlarına sırayla ulaşırsın. İlk eleman [0]'dır.",
+        "text": "Elemanlara sırayla ulaşırsın; ilk eleman [0]'dır, ikincisi [1].",
         "code": "renkler = [\"kırmızı\", \"mavi\"]\nprint(renkler[0])"
       },
       {
@@ -206,6 +279,17 @@
         "text": "meyveler = [\"elma\", \"armut\"] listesini oluştur ve ilk elemanı yazdır.",
         "expected": "meyveler = [\"elma\", \"armut\"]\nprint(meyveler[0])",
         "hint": "İlk eleman için [0] kullan."
+      },
+      {
+        "type": "learn",
+        "text": "len(liste) eleman sayısını verir; döngüyle tek tek gezebilirsin.",
+        "code": "sehirler = [\"Ankara\", \"İzmir\"]\nfor s in sehirler:\n    print(s)"
+      },
+      {
+        "type": "task",
+        "text": "hayvanlar = [\"kedi\", \"köpek\"] için her hayvanı ayrı satırda yazdır.",
+        "expected": "hayvanlar = [\"kedi\", \"köpek\"]\nfor h in hayvanlar:\n    print(h)",
+        "hint": "for h in hayvanlar: ile dön."
       }
     ]
   },
@@ -214,10 +298,11 @@
     "title": "Fonksiyon",
     "subtitle": "def",
     "unit": "Veri",
+    "goal": "Kendi komutlarını yazıp tekrar kullanmayı öğreneceksin.",
     "steps": [
       {
         "type": "learn",
-        "text": "Fonksiyon tekrar kullanılan bir kod bloğudur. def ile tanımlanır, ismiyle çağrılır.",
+        "text": "Fonksiyon tekrar kullanılan kod bloğudur. def ile tanımlanır, ismiyle çağrılır.",
         "code": "def selamla():\n    print(\"Merhaba\")\nselamla()"
       },
       {
@@ -228,14 +313,25 @@
       },
       {
         "type": "learn",
-        "text": "Fonksiyon parametre alabilir; çağırırken içine değer verirsin.",
+        "text": "Fonksiyon parametre alabilir; çağırırken içine değer verirsin, gövdede kullanırsın.",
         "code": "def selam(ad):\n    print(ad)\nselam(\"Ali\")"
       },
       {
         "type": "task",
-        "text": "yaz adında, ad parametresi alan ve onu yazdıran bir fonksiyon yaz. Sonra \"Veli\" ile çağır.",
+        "text": "yaz adında, ad parametresi alan ve onu yazdıran bir fonksiyon yaz. \"Veli\" ile çağır.",
         "expected": "def yaz(ad):\n    print(ad)\nyaz(\"Veli\")",
         "hint": "def yaz(ad): / girintili print(ad) / yaz(\"Veli\")"
+      },
+      {
+        "type": "learn",
+        "text": "return ile fonksiyon bir sonuç döndürür; sonucu değişkene atayıp kullanabilirsin.",
+        "code": "def kare(x):\n    return x * x\nprint(kare(4))"
+      },
+      {
+        "type": "task",
+        "text": "katla(x) fonksiyonu x'i 2 ile çarpıp döndürsün. katla(5) sonucunu yazdır.",
+        "expected": "def katla(x):\n    return x * 2\nprint(katla(5))",
+        "hint": "return x * 2 ve print(katla(5))."
       }
     ]
   }
